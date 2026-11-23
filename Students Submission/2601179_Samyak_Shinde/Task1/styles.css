@@ -1,0 +1,165 @@
+/* Base page styling */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #fafbfe;
+  color: #1e293b;
+}
+
+
+/* Header and navigation */
+.head {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 40px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.logo-img { height: 36px; width: auto; object-fit: contain; }
+.logo h2 { margin: 0; font-size: 22px; font-weight: 700; color: #111827; }
+.tabs { display: flex; align-items: center; gap: 36px; }
+.tabs a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #4b5563;
+  font-weight: 500;
+  transition: color .2s ease;
+}
+.tabs a:hover, .tabs a.active { color: #6436c9; }
+.tabs a.active { border-bottom: 2px solid #6436c9; padding-bottom: 4px; font-weight: 600; }
+.btn-start, .btn-practice, .btn-viewprob {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .2s ease, transform .2s ease;
+}
+.btn-start {
+  padding: 10px 22px;
+  background: #6436c9;
+  color: #fff;
+  border: 0;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.btn-start:hover, .btn-practice:hover { background: #5227b6; transform: translateY(-1px); }
+
+/* Hero section */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px 40px;
+  gap: 40px;
+}
+.left { max-width: 520px; }
+.headline h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  letter-spacing: -.5px;
+}
+.job { color: #6436c9; }
+.description p {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 32px;
+  max-width: 440px;
+}
+.buttons { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.btn-practice {
+  padding: 12px 24px;
+  background: #6436c9;
+  color: #fff;
+  border: 1.5px solid #6436c9;
+  font-size: 15px;
+}
+.btn-viewprob {
+  padding: 12px 24px;
+  background: #fff;
+  color: #6436c9;
+  border: 1.5px solid #6436c9;
+  font-size: 15px;
+}
+.btn-viewprob:hover { background: #f3edff; }
+.right { display: flex; justify-content: center; align-items: center; flex: 1; min-width: 0; }
+.img-right { max-width: 460px; width: 100%; height: auto; object-fit: contain; }
+
+/* Feature cards */
+.footer {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px 40px 60px;
+  gap: 25px;
+  background: #f2e0ff;
+}
+.card {
+  flex: 1 1 260px;
+  max-width: 350px;
+  background: #fff;
+  border: 1px solid #e9e2e2;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-img { height: 45px; width: auto; object-fit: contain; margin-bottom: 15px; }
+.card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; color: #0f172a; }
+.card p { margin: 0; font-size: 14px; color: #64748b; }
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .nav { padding: 16px 24px; gap: 16px; }
+  .tabs { gap: 18px; }
+  .main { padding: 48px 24px 32px; gap: 24px; }
+  .headline h1 { font-size: 40px; }
+}
+@media (max-width: 680px) {
+  .nav { flex-wrap: wrap; justify-content: center; }
+  .logo { margin-right: auto; }
+  .btn-start { margin-left: auto; }
+  .tabs { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 16px; }
+  .main { flex-direction: column; text-align: center; padding: 40px 20px 28px; }
+  .left { max-width: 100%; }
+  .description p { margin-left: auto; margin-right: auto; }
+  .buttons { justify-content: center; }
+  .right { width: 100%; }
+  .img-right { max-width: 400px; }
+  .footer { padding: 20px 20px 40px; }
+  .card { max-width: none; }
+}
+@media (max-width: 420px) {
+  .logo h2 { font-size: 19px; }
+  .headline h1 { font-size: 34px; }
+  .buttons { flex-direction: column; width: 100%; }
+  .btn-practice, .btn-viewprob { width: 100%; }
+}
