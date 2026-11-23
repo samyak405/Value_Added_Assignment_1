@@ -1,81 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skilli Travel</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skilli Travel | Explore the World</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <a class="brand" href="#home" aria-label="Skilli Travel home"><span class="plane">✈</span><span>Skilli Travel</span></a>
-    <nav class="nav" aria-label="Main navigation">
-      <a class="active" href="#home">Home</a>
-      <a href="#destinations">Destinations</a>
-      <a href="#packages">Packages</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="book-btn" href="#search">Book Now</a>
-    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-  </header>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="brand" href="#home">
+                <img src="assets/04.png" alt="Skilli Travel airplane logo">
+                <span>Skilli Travel</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a class="active" href="#home">Home</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#packages">Packages</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <a class="btn btn-nav" href="#packages">Book Now</a>
+        </nav>
+    </header>
 
 
-  <main id="home">
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Explore the World<br />with Skilli Travel</h1>
-        <p>Discover amazing destinations, curated travel<br class="desktop-only" /> packages, and unforgettable experiences.</p>
-        <div class="hero-actions">
-          <a class="primary-btn" href="#packages">Explore Packages <span>→</span></a>
-          <a class="outline-btn" href="#contact">Contact Us</a>
-        </div>
-      </div>
-    </section>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Explore the World<br>with Skilli Travel</h1>
+                <p>Discover amazing destinations, curated travel<br class="desktop-break"> packages, and unforgettable experiences.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#packages">Explore Packages <span aria-hidden="true">→</span></a>
+                    <a class="btn btn-outline" href="#contact">Contact Us</a>
+                </div>
+            </div>
+        </section>
 
 
-    <section class="search-wrap" id="search" aria-label="Find your trip">
-      <div class="search-field destination-field">
-        <span class="field-icon">●</span><div><label for="destination">Destination</label><input id="destination" type="text" placeholder="Where to go?" /></div>
-      </div>
-      <div class="search-field date-field">
-        <span class="field-icon">▦</span><div><label for="travel-date">Travel Date</label><input id="travel-date" type="date" /></div>
-      </div>
-      <div class="search-field travelers-field">
-        <span class="field-icon">♟</span><div><label for="travelers">Travelers</label><select id="travelers"><option>1 Traveler</option><option>2 Travelers</option><option>3 Travelers</option><option>4 Travelers</option><option>5+ Travelers</option></select></div>
-      </div>
-      <button class="search-btn" id="search-btn">⌕ <span>Search</span></button>
-    </section>
+        <section class="search-section" aria-label="Find your trip">
+            <form class="search-panel" id="travelSearch">
+                <div class="search-field destination-field">
+                    <img src="assets/03.png" alt="">
+                    <div class="field-content">
+                        <label for="destination">Destination</label>
+                        <input id="destination" type="text" placeholder="Where to go?">
+                    </div>
+                </div>
+
+                <div class="search-field date-field">
+                    <img src="assets/02.png" alt="">
+                    <div class="field-content">
+                        <label for="travelDate">Travel Date</label>
+                        <input id="travelDate" type="date" aria-label="Select travel date">
+                    </div>
+                </div>
+
+                <div class="search-field traveler-field">
+                    <img src="assets/01.png" alt="">
+                    <div class="field-content">
+                        <label for="travelers">Travelers</label>
+                        <select id="travelers">
+                            <option value="1">1 Traveler</option>
+                            <option value="2">2 Travelers</option>
+                            <option value="3">3 Travelers</option>
+                            <option value="4">4 Travelers</option>
+                            <option value="5">5 Travelers</option>
+                            <option value="6">6+ Travelers</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn btn-search" type="submit"><span class="search-icon" aria-hidden="true"></span> Search</button>
+            </form>
+            <p class="search-feedback" id="searchFeedback" aria-live="polite"></p>
+        </section>
 
 
-    <section class="destinations" id="destinations">
-      <div class="section-title"><span></span><h2>Popular Destinations</h2><span></span></div>
-      <div class="destination-grid" id="packages">
-        <article class="destination-card card-lonavala">
-          <div class="card-shade"></div><div class="card-info"><h3>Lonavala</h3><p>📍 Maharashtra</p><span class="price">₹4,999</span></div>
-        </article>
-        <article class="destination-card card-goa">
-          <div class="card-shade"></div><div class="card-info"><h3>Goa</h3><p>📍 India</p><span class="price">₹8,999</span></div>
-        </article>
-        <article class="destination-card card-manali">
-          <div class="card-shade"></div><div class="card-info"><h3>Manali</h3><p>📍 Himachal Pradesh</p><span class="price">₹12,999</span></div>
-        </article>
-      </div>
-    </section>
-  </main>
+        <section class="destinations-section" id="destinations">
+            <div class="section-heading">
+                <span></span>
+                <h2>Popular Destinations</h2>
+                <span></span>
+            </div>
 
-  <footer id="about"><p>Skilli Travel · Make memories, not just plans.</p><p id="contact">Contact us to plan your next adventure.</p></footer>
-  <script>
-    const searchBtn = document.getElementById('search-btn');
-    searchBtn.addEventListener('click', () => {
-      const destination = document.getElementById('destination').value.trim();
-      const date = document.getElementById('travel-date').value;
-      const travelers = document.getElementById('travelers').value;
-      if (!destination) { document.getElementById('destination').focus(); return; }
-      alert(`Searching trips to ${destination}${date ? ` on ${date}` : ''} for ${travelers}.`);
-    });
-    const toggle = document.querySelector('.menu-toggle');
-    toggle.addEventListener('click', () => document.querySelector('.nav').classList.toggle('open'));
-  </script>
+            <div class="destination-grid" id="packages">
+                <article class="destination-card">
+                    <img src="assets/08.png" alt="Green hills and waterfall in Lonavala">
+                    <div class="card-overlay">
+                        <div class="destination-info">
+                            <h3>Lonavala</h3>
+                            <p><span class="pin-icon" aria-hidden="true">●</span> Maharashtra</p>
+                        </div>
+                        <span class="price">₹4,999</span>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="assets/10.png" alt="Goa beach at sunset with palm trees">
+                    <div class="card-overlay">
+                        <div class="destination-info">
+                            <h3>Goa</h3>
+                            <p><span class="pin-icon" aria-hidden="true">●</span> India</p>
+                        </div>
+                        <span class="price">₹8,999</span>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="assets/09.png" alt="Snow-covered Himalayan mountains near Manali">
+                    <div class="card-overlay">
+                        <div class="destination-info">
+                            <h3>Manali</h3>
+                            <p><span class="pin-icon" aria-hidden="true">●</span> Himachal Pradesh</p>
+                        </div>
+                        <span class="price">₹12,999</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer" id="about">
+        <p>Made for explorers. <span id="contact">Travel with Skilli.</span></p>
+    </footer>
+
+
+    <script>
+        const menuToggle = document.querySelector("#menuToggle");
+        const navLinks = document.querySelector("#navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        document.querySelector("#travelSearch").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const destination = document.querySelector("#destination").value.trim();
+            const date = document.querySelector("#travelDate").value;
+            const travelers = document.querySelector("#travelers").value;
+            const feedback = document.querySelector("#searchFeedback");
+
+            if (!destination) {
+                feedback.textContent = "Please enter a destination to search.";
+                document.querySelector("#destination").focus();
+                return;
+            }
+
+            feedback.textContent = `Searching trips to ${destination}${date ? ` for ${date}` : ""} for ${travelers} traveler(s)...`;
+        });
+    </script>
 </body>
 </html>
